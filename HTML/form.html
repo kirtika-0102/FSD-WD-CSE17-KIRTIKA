@@ -7,14 +7,38 @@
 </head>
 <body>
     <form action="#" method="post" enctype="multipart/form-data">
-        <input type="text" name="fullname" placeholder="enter full name" required>
-        <input type="email" name="email" placeholder="enter email" required>
-        <input type="number" name="age" placeholder="enter age" required>
-        <select name="role">
-            <option >student</option>
-            <option value="">working </option>
-            <option value="">unemployed</option>
-        </select>
+        <table>
+            <tr>
+                <td>* Full Name</td>
+                <td><input type="text" name="fullname" placeholder="enter full name" required></td>
+            </tr>
+            <tr>
+                <td>* Enter Email</td>
+                <td><input type="email" name="email" placeholder="enter email" required></td>
+            </tr>
+            <tr>
+                <td>* Enter Age</td>
+                <td><input type="number" name="age" placeholder="enter age" required></td>
+            </tr>
+            <tr>
+                <td>* Which option describes your current role?</td>
+                <td>
+                    <select name="role">
+                        <option >Student</option>
+                        <option value="">Working Proffesional </option>
+                        <option value="">Freelancer</option>
+                        <option value="">Unemployed</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>* Would you like to list references?</td>
+                <td>
+                    <input type="radio" name="references" value="yes" required> Yes
+                    <input type="radio" name="references" value="no" required> No
+                </td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>
