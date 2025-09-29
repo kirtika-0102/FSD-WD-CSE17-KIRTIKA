@@ -1,8 +1,12 @@
-p{
+#paragraph1 {
     color: aqua;
 }
-*{
-    background-color: pink;
-    font-size : 30px;
+#paragraph2 {
+    color: pink;
 }
-
+#paragraph3 {
+    color: chocolate;
+}
+#paragraph4 {
+    color: mediumslateblue;
+}
