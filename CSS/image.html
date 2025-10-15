@@ -16,7 +16,75 @@
                 margin-left: auto;
                 margin-right: auto;
                 width : 300px; }
-
+        #img5 { 
+               body {margin:25px;}
+               div.polaroid {
+                    width: 80%;
+                    background-color: white;
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    margin-bottom: 25px;
+                    }
+                div.container {
+                    text-align: center;
+                    padding: 10px 20px;
+                }
+        }
+        body {
+                background-color:white;
+            }
+        #img6 {
+                width: 33%;
+                height: auto;
+                float: left; 
+                max-width: 235px;
+        }
+            .blur {filter: blur(4px);}
+            .brightness {filter: brightness(250%);}
+            .contrast {filter: contrast(180%);}
+            .grayscale {filter: grayscale(100%);}
+            .huerotate {filter: hue-rotate(180deg);}
+            .invert {filter: invert(100%);}
+            .opacity {filter: opacity(50%);}
+            .saturate {filter: saturate(7);}
+            .sepia {filter: sepia(100%);}
+            .shadow {filter: drop-shadow(8px 8px 10px green);}
+        
+        .container {
+            position: relative;
+            width: 50%;
+            }
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .overlay {
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            right: 0;
+            background-color: #008CBA;
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: .5s ease;
+        }
+        .container:hover.overlay{
+            bottom: 0;
+            height: 100%;
+        }
+        .text {
+            white-space: nowrap; 
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            overflow: hidden;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+            
     </style>
 </head>
 <body>
@@ -28,8 +96,37 @@
     <img id="img3" src="a0002487_main.webp" alt="Japan"><br><br>
     <h2> Center an Image </h2>
     <p>To center an image, set left and right margin to auto, and make it into a block element.</p>
-    <img id="img4" src="a0002487_main.webp" alt="Japan">
-    
+    <img id="img4" src="a0002487_main.webp" alt="Japan"> <br><br>
+    <h2> Responsive Polaroid Images / Cards </h2>
+    <div id="img5" class="polaroid">
+        <img src="a0002487_main.webp" alt="JApan" style="width:100%">
+        <div class="container">
+        <p> JAPAN </p>
+    </div>
+    <br><br>
+    <h2> Image Filters </h2>
+    <img id="img6" src="a0002487_main.webp" alt="Japan" width="300" height="300">
+    <img id="img6" class="blur" src="a0002487_main.webp" alt="Japan" width="300" height="300">
+    <img id="img6" class="brightness" src="a0002487_main.webp" alt="Japan" width="300" height="300">
+    <img id="img6" class="contrast" src="a0002487_main.webp" alt="Japan" width="300" height="300">
+    <img id="img6" class="grayscale" src="a0002487_main.webp" alt="Japan" width="300" height="300">
+    <img id="img6" class="huerotate" src="a0002487_main.webp" alt="Japan" width="300" height="300">
+    <img id="img6" class="invert" src="a0002487_main.webp" alt="Japan" width="300" height="300">
+    <img id="img6" class="opacity" src="a0002487_main.webp" alt="Japan" width="300" height="300">
+    <img id="img6" class="saturate" src="a0002487_main.webp" alt="Japan" width="300" height="300">
+    <img id="img6" class="sepia" src="a0002487_main.webp" alt="Japan" width="300" height="300">
+    <img id="img6" class="shadow" src="a0002487_main.webp" alt="Japan" width="300" height="300">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h2>Slide in Overlay from the Top</h2>
+    <div class="container">
+    <img src="a0002487_main.webp" alt="Japan" class="image">
+    <div class="overlay">
+        <div class="text">Hello World</div>
+    </div>
+</div>
+
+
+</div>
 
 
 </body>
