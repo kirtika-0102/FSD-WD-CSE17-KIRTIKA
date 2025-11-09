@@ -1,5 +1,5 @@
 body{
-    background: url("bg.jpeg");
+    background: url("bg1.avif");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -7,12 +7,13 @@ a:hover{
     color: red; transition:color 0.3s ease ;
 }
 table:hover{
-    transform:scale(1.20); transition: transform 0.5s ease;
+    transform:scale(1.05); transition: transform 0.5s ease;
 }
 table{
-    background-color: beige;
+    background-color:rgba(240, 200, 207, 0.837);
     border-radius: 20px;
     overflow: hidden;
+    font-family: 'Great Vibes',cursive;
 }
 a{
     transition: color 0.3s ease;
