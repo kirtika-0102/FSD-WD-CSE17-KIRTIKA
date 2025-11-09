@@ -7,7 +7,7 @@
     <link rel="icon"  href="BOOKSTORE.ico">
 </head>
 <body>
-    <div style="text-align: justify;"> <b> Experiment 6 </b> </div>
+    <div style="text-align: justify;"> <b> Experiment 7 </b> </div>
 </body>
     <main>
         <form id="myform" action="#" method="post" enctype="multipart/form-data">
@@ -34,13 +34,13 @@
                     <td rowspan="4" colspan="4" align="left"><div style="text-align: center;"> <br> 
                             <b><u> Registration Page </u> </b> </div><br>
                             Name: <input id="name" type="text" name="name" placeholder="First name"  size="8" required>
-                            <input id="name" type="text" name="name" placeholder="Last name"  size="8" required><br>
-                            <span id="name-error" style="color:red;"></span> <br><br>
-                            Passwords: <input id="password" type="password" name="password"  required><br>
-                            <span id="password-error" style="color:red;"></span> <br> <br>
-                            Email: <input type="email" name="email"  required> <br> <br>
+                            <input id="name" type="text" name="name" placeholder="Last name"  size="8" required> <br><br>
+                            Passwords: <input id="password" type="password" name="password"  required><br> <br>
+                            Email: <input id="email" type="email" name="email" required><br>
+                            <span id="email-error" style="color:red;"></span><br> <br>
                             PHONE NO.: <input type="text" name="country-code" value="+91" readonly size="1">
-                            <input type="tel" id="phone no" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required><br><br>
+                            <input type="number" id="phone" name="phone" placeholder="Enter your phone number" required><br>
+                            <span id="phone-error" style="color:red;"></span><br><br>
                             Sex: <input type="radio" name="sex" value="Female" > Female
                             <input type="radio" name="references" value="Male" > Male <br><br>
                             Date Of Birth: <input type="number" name="date" placeholder="DD" min="1" max="31" required>
@@ -65,30 +65,28 @@
         </form>
         <script>
             document.getElementById("myform").addEventListener("submit",function(event){
-                let name=document.getElementById("name").value;
-                let password=document.getElementById("password").value;
-                let nameErr=document.getElementById("name-error");
-                let passErr= document.getElementById("password-error");
-                nameErr.textContent= "";
-                passErr.textContent= "";
+                let email=document.getElementById("email").value;
+                let phone=document.getElementById("phone").value;
+                let emailErr=document.getElementById("email-error");
+                let phoneErr= document.getElementById("phone-error");
+                emailErr.textContent= "";
+                phoneErr.textContent= "";
                 let isValid= true;
-                if (name===""){
-                    nameErr.textContent="Name is required";
+                let emailPattern=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (email===""){
+                    emailErr.textContent="Email Id is required";
                     isValid=false;
-                }else if(!/^[A-Za-z\s]+$/.test(name)){
-                    nameErr.textContent="Name must contain only alphabets and spaces";
-                    isValid=false;
-                }
-                else if(name.length<6){
-                    nameErr.textContent="Name must be atleast 6 characters long";
+                }else if(!emailPattern.test(email)){
+                    emailErr.textContent="Enter a valid email address (e.g. name@domain.com)";
                     isValid=false;
                 }
-                if(password===""){
-                    passErr.textContent="Password is required";
+                let phonePattern = /^[0-9]{10}$/;
+                if(phone===""){
+                    phoneErr.textContent="Phone number is required";
                     isValid=false;
                 }
-                else if( password.length<6){
-                    passErr.textContent="Password must contain 6 characters";
+                else if(!phonePattern.test(phone)){
+                    phoneErr.textContent="Phone number must contain 10 digits";
                     isValid=false;
                 }
                 if (!isValid){
