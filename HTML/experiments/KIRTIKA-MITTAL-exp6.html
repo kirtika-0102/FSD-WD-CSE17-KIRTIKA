@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon"  href="BOOKSTORE.ico">
+</head>
+<body>
+    <div style="text-align: justify;"> <b> Experiment 5 </b> </div>
+</body>
+    <main>
+        <form id="myform" action="#" method="post" enctype="multipart/form-data">
+            <table border ="1">
+                <tr>
+                    <th> <img src="BOOKSTORE.jpg" width="60" length="30" alt=""> </th>
+                    <th bgcolor="orange" colspan ="4"> WEB SITE NAME </th>
+                </tr>
+                <tr>
+                    <th bgcolor="#f9e1d1" >HOME</th>
+                    <th bgcolor=" #f9e1d1"><a href="exp2.html" target="_main">LOGIN </a></th>
+                    <th bgcolor="#f9e1d1"><a href="KIRTIKA-MITTAL-exp5.html" target="_main">REGISTRATION </a></th>
+                    <th bgcolor="#f9e1d1"><a href="KIRTIKA-MITTAL-exp3.html" target="_main">CATALOGUE</a></th>
+                    <th bgcolor="#f9e1d1"><a href="KIRTIKA-MITTAL-exp4.html" target="_main">CART</a></th>
+                </tr>
+                    <td rowspan="4">CSE <br> <br> <br><br>
+                        ECE <br> <br> <br> <br><br>
+                        EEE <br> <br><br><br><br>
+                        CIVIL <br><br><br><br>
+                        <br>
+                        <br>
+                    </td> 
+                    <br>
+                    <td rowspan="4" colspan="4" align="left"><div style="text-align: center;"> <br> 
+                            <b><u> Registration Page </u> </b> </div><br>
+                            Name: <input id="name" type="text" name="name" placeholder="First name"  size="8" required>
+                            <input id="name" type="text" name="name" placeholder="Last name"  size="8" required><br>
+                            <span id="name-error" style="color:red;"></span> <br><br>
+                            Passwords: <input id="password" type="password" name="password"  required><br>
+                            <span id="password-error" style="color:red;"></span> <br> <br>
+                            Email: <input type="email" name="email"  required> <br> <br>
+                            PHONE NO.: <input type="text" name="country-code" value="+91" readonly size="1">
+                            <input type="tel" id="phone no" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required><br><br>
+                            Sex: <input type="radio" name="sex" value="Female" > Female
+                            <input type="radio" name="references" value="Male" > Male <br><br>
+                            Date Of Birth: <input type="number" name="date" placeholder="DD" min="1" max="31" required>
+                            <input type="number" name="month" placeholder="MM" min="1" max="12" required>
+                            <input type="number" name="date" placeholder="YYYY" min="1900" max="2025" required> <br><br>
+                            How many languages do you know?<br>
+                            <input type="checkbox" name="lang" value="English"> English 
+                            <input type="checkbox" name="lang" value="Hindi"> Hindi 
+                            <input type="checkbox" name="lang" value="Telugu"> Telugu
+                            <input type="checkbox" name="lang" value="Tamil"> Tamil <br><br>
+                            Address: <input type="text" name="Address" placeholder="Flat No" size="3" required>
+                            <input type="text" name="Address" placeholder="Locality" size="10" required>
+                            <input type="text" name="Address" placeholder="City" size="8" required>
+                            <input type="text" name="Address" placeholder="District" size="8" required>
+                            <input type="number" name="Address" placeholder="Pin-code" size="8" required><br><br>
+                            <div style="text-align: center; margin-top: 5px;">
+                            <button type="submit">submit </button> &emsp; <button type="Refresh">Refresh </button></div>
+                            <br>
+                </tr>
+                </tr>
+            </table>
+        </form>
+        <script>
+            document.getElementById("myform").addEventListener("submit",function(event){
+                let name=document.getElementById("name").value;
+                let password=document.getElementById("password").value;
+                let nameErr=document.getElementById("name-error");
+                let passErr= document.getElementById("password-error");
+                nameErr.textContent= "";
+                passErr.textContent= "";
+                let isValid= true;
+                if (name===""){
+                    nameErr.textContent="Name is required";
+                    isValid=false;
+                }else if(!/^[A-Za-z\s]+$/.test(name)){
+                    nameErr.textContent="Name must contain only alphabets and spaces";
+                    isValid=false;
+                }
+                else if(name.length<6){
+                    nameErr.textContent="Name must be atleast 6 characters long";
+                    isValid=false;
+                }
+                if(password===""){
+                    passErr.textContent="Password is required";
+                    isValid=false;
+                }
+                else if( password.length<6){
+                    passErr.textContent="Password must contain 6 characters";
+                    isValid=false;
+                }
+                if (!isValid){
+                    event.preventDefault();
+                }
+            });
+        </script>
+    </main>
+</body>
+</html>
