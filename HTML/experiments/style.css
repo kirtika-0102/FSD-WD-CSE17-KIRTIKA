@@ -16,5 +16,13 @@ table{
     font-family: 'Great Vibes',cursive;
 }
 a{
+    color: purple;
+    text-decoration: none;
     transition: color 0.3s ease;
+}
+a:active{
+    color: red;
+}
+a.clicked{
+    color: red;
 }
