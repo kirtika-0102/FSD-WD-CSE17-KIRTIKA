@@ -1,11 +1,13 @@
-body{
+body {
     margin: 0;
     height: 100vh;
     background-repeat: repeat-y;
     background-size: cover;
     background-position: center;
-    animation: changeBackground 5s infinite;
+    animation: changeBackground 20s infinite ease-in-out; 
+    transition: background-image 2s ease-in-out; 
 }
+
 @keyframes changeBackground{
     0% {background-image:url(bg1.avif);}
     20% {background-image:url(bg2.jpg);}
@@ -14,7 +16,6 @@ body{
     80% {background-image:url(bg5.avif);}
     100% {background-image:url(bg1.avif);}
 }
-
 a:link{
     color: blue;
     text-decoration: none;
@@ -28,6 +29,9 @@ a:hover{
 }
 a:active{
     color: green;
+}
+a.clicked{
+    color: red;
 }
 table{
     background-color:rgba(240, 200, 207, 0.837);
