@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    height: 100vh;
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center;
+    animation: changeBackground 5s infinite;
+}
+@keyframes changeBackground{
+    0% {background-image:url(bg1.avif);}
+    20% {background-image:url(bg2.jpg);}
+    40% {background-image:url(bg3.jpg);}
+    60% {background-image:url(bg4.jpg);}
+    80% {background-image:url(bg5.avif);}
+    100% {background-image:url(bg1.avif);}
+}
+
+a:link{
+    color: blue;
+    text-decoration: none;
+}
+a:visited{
+    color: purple;
+}
+a:hover{
+    color: red;
+    text-decoration: underline;
+}
+a:active{
+    color: green;
+}
+table{
+    background-color:rgba(240, 200, 207, 0.837);
+    border-radius: 20px;
+    overflow: hidden;
+    font-family: 'Great Vibes',cursive;
+}
+table:hover{
+    transform:scale(1.05); transition: transform 0.5s ease;
+}
+
